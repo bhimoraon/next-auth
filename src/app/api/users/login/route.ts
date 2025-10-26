@@ -54,7 +54,11 @@ export async function POST(request: NextRequest) {
         }
 
         // create token
+        // const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET!, {});
+        // const cookieStore = await cookies();
+        // cookieStore.set("userInfo", token, { httpOnly: true, secure: process.env.NODE_ENV === "production" });
         const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET!, { expiresIn: "1d" });
+
         const response = NextResponse.json({
             message: "Login successful",
             success: true,
@@ -69,3 +73,16 @@ export async function POST(request: NextRequest) {
     }
 }
 
+// const token = (await cookies()).get("userInfo")?.value || null;
+// let tokenData;
+// if (token) {
+// 	try {
+// 		tokenData = await jwt.verify(token, process.env.TOKEN_SECRET!);
+// 		console.log("Token data:", tokenData);
+
+// 	} catch (error) {
+// 		console.log("JWT verification failed:", error);
+// 	}
+// } else {
+// 	console.log("No token exist ");
+// }
