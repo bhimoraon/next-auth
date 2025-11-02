@@ -38,7 +38,7 @@ function SignupPage() {
 	}, [user]);
 
 	return (
-		<div className="flex justify-center items-center w-screen h-screen">
+		<div className=" flex justify-center items-center w-screen h-screen">
 			<div className="border-gray-600 border p-10  rounded-lg ">
 				<h1 className="">{Loading ? "Loading" : "SignUpPage"}</h1>
 				<br />
@@ -47,7 +47,7 @@ function SignupPage() {
 					type="text"
 					value={user.email}
 					id="email"
-					className="p-5 rounded-lg border border-gray-300 focus:outline-none focus:border-gray-600 text-black"
+					className="p-5 rounded-lg border border-gray-300 focus:outline-none focus:border-gray-600 text-white"
 					placeholder="email"
 					onChange={(e) => setUser({ ...user, email: e.target.value })}
 				/>
@@ -57,7 +57,7 @@ function SignupPage() {
 					type="text"
 					value={user.username}
 					id="username"
-					className="p-5 rounded-lg border border-gray-300 focus:outline-none focus:border-gray-600 text-black"
+					className="p-5 rounded-lg border border-gray-300 focus:outline-none focus:border-gray-600 text-white"
 					placeholder="username"
 					onChange={(e) => setUser({ ...user, username: e.target.value })}
 				/>
@@ -67,7 +67,7 @@ function SignupPage() {
 					type="password"
 					value={user.password}
 					id="password"
-					className="p-5 rounded-lg border border-gray-300 focus:outline-none focus:border-gray-600 text-black"
+					className="p-5 rounded-lg border border-gray-300 focus:outline-none focus:border-gray-600 text-white"
 					placeholder="password"
 					onChange={(e) => setUser({ ...user, password: e.target.value })}
 				/>
